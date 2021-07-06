@@ -5,8 +5,6 @@ import Colors from '../res/Colors.js';
 
 class Landing extends React.Component{
 
- 
-
     handlepress = () => {
         this.props.navigation.navigate('LogIn');
     };

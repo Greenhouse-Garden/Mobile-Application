@@ -25,6 +25,8 @@ const GreenHouseStack = () => {
             <Stack.Screen
                 name="LogIn"
                 component={LogIn}
+                options={{headerShown: false}}
+
             /> 
         </Stack.Navigator>
     );
