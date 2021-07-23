@@ -2,7 +2,9 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import Landing from './Landing'
 import LogIn from './LogIn'
+import Badges from './Badges'
 import Colors from '../res/Colors'
+
 
 const Stack = createStackNavigator();
 
@@ -28,7 +30,14 @@ const GreenHouseStack = () => {
                 options={{headerShown: false}}
 
             /> 
-        </Stack.Navigator>
+
+            <Stack.Screen
+                name="Badges"
+                component={Badges}
+                options={{headerShown: false}}
+
+            /> 
+            </Stack.Navigator>
     );
 }
 

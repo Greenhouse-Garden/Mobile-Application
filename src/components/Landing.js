@@ -79,6 +79,8 @@ const styles = StyleSheet.create({
     },
     clickableText: {
         textDecorationLine: 'underline',
+        fontWeight:'bold',
+
     }
 })
 

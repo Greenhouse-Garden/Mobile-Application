@@ -27,15 +27,14 @@ class Login extends React.Component{
 
 
     handlepress = () => {
-        this.props.navigation.navigate('LogIn');
+        this.props.navigation.navigate('Badges');
     };
 
 
 
     render(){
         return(
-            <KeyboardAvoidingView
-                style={styles.containerKey}>
+            <KeyboardAvoidingView style={styles.containerKey}>
                     <ImageBackground source={{uri: 'https://images.pexels.com/photos/2560898/pexels-photo-2560898.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'}} style={styles.image}>
                         <View style={styles.layerColor}>
 
@@ -54,7 +53,7 @@ class Login extends React.Component{
                                                 style={styles.input} 
                                                 placeholder={'Password'}
                                                 secureTextEntry={true}/>                                          
-                                            <TouchableOpacity style={styles.button} onPress={this.handlePress}>
+                                            <TouchableOpacity style={styles.button} onPress={this.handlepress}>
                                                 <Text style={styles.buttonText}>LogIn</Text>
                                             </TouchableOpacity>
 
@@ -181,6 +180,7 @@ const styles = StyleSheet.create({
         marginLeft:10,
         fontWeight: 'bold',
         color: Colors.white,
+
     },
 
     input:{
@@ -190,6 +190,7 @@ const styles = StyleSheet.create({
         borderRadius:10,
         borderColor:Colors.white,
         width:250,
+
     },
 
     button:{
@@ -197,7 +198,7 @@ const styles = StyleSheet.create({
         marginTop: 50,
         borderRadius: 15,
         backgroundColor: Colors.green,
-        borderColor: Colors.white,
+        borderColor: Colors.green,
         borderWidth: 1,
         width: 150,
         bottom: 20,
@@ -217,6 +218,13 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: Colors.white,
     },
+
+    clickableText:{
+        fontWeight:'bold',
+        textDecorationLine: 'underline',
+
+    },
+
     facebookIcon:{
         marginTop: 20,
         marginBottom: 25,
