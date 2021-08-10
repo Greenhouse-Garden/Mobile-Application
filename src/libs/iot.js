@@ -2,65 +2,27 @@ import URLS from './urls'
 
 class iot {
   static instance = new iot()
-  get_all = async () => {
+
+  get = async IdArduino => {
       try {
-          let request = await fetch(`${URLS.badges_url}/all/`)
+          let request = await fetch(`${URLS.arduino_url}/_id:${IdArduino}/`)
           let response = await request.json()
           return response
-      } catch (err) {
-          console.log('HTTP get all method error', err)
-          throw Error(err)
-      }
-  }
-  get = async badgeId => {
-      try {
-          let request = await fetch(`${URLS.badges_url}/_id:${badgeId}/`)
-          let response = await request.json()
-          return response
-      } catch (err) {
+      } catch (error) {
           console.log('HTTP get method error', err)
-          throw Error(err)
+          throw Error(error)
       }
   }
-  post = async badge => {
+  post = async sensor => {
       try {
-          let request = await fetch(`${URLS.badges_url}/new/`,{
+          let request = await fetch(`${URLS.arduino_url}/new/`,{
               method:'POST',
-              body:JSON.stringify(badge),
+              body:JSON.stringify(sensor),
           })
           let response = await request.json()
           return response
       } catch (err) {
           console.log('HTTP post method error', err)
-          throw Error(err)
-      }
-  }
-  put = async (badgeId, body) => {
-      try {
-          let request = await fetch(`${URLS.badges_url}/_id:${badgeId}/`,{
-              method:'PUT',
-              headers: {
-                'Content-Type': 'application/json',
-                Accept: 'application/json'
-              },
-              body:JSON.stringify(body),
-          })
-          let response = await request.json()
-          return response
-      } catch (err) {
-          console.log('HTTP put method error', err)
-          throw Error(err)
-      }
-  }
-  remove = async badgeId => {
-      try {
-          let request = await fetch(`${URLS.badges_url}/_id:${badgeId}/`,{
-              method:'DELETE',
-          })
-          let response = await request.json()
-          return response
-      } catch (err) {
-          console.log('HTTP delete method error', err)
           throw Error(err)
       }
   }
