@@ -312,7 +312,7 @@ Temporary Items
 .apdisk
 
 #folders
-*/.vscode/
-*/assets/
+/.vscode/
+/assets/
 
 # End of https://www.toptal.com/developers/gitignore/api/reactnative
