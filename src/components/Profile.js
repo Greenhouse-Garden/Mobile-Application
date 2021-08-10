@@ -17,6 +17,7 @@ class Profile extends React.Component{
     handlepressAddArduino = () => {
         this.props.navigation.navigate('AddArduino');
     };
+
     render(){
         return(
             <View style={styles.Container}>
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
     AddArduinoButton:{
         width: 180,
         height: 60, 
-        marginTop: 410,
+        marginTop: 10,
         marginLeft: 165,
         alignItems: 'center'
     },

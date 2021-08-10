@@ -28,7 +28,7 @@ const Tab = createBottomTabNavigator();
 class Status extends React.Component{
 
     handlepress = () => {
-        this.props.navigation.navigate('BadgeDetail');
+        this.props.navigation.navigate('StatusDetail');
     };
     handlepressProfile = () => {
         this.props.navigation.navigate('Profile');
@@ -41,7 +41,7 @@ class Status extends React.Component{
 
         return(
             <ScrollView style={styles.container}>
-                        <Image style={styles.headerImage} source={{uri:'https://c1.wallpaperflare.com/preview/121/822/384/plant-greenhouse-fern-green.jpg'}} />
+                <StatusBar backgroundColor="transparent" translucent={true} />
                 <TouchableOpacity style={styles.button} onPress={this.handlepress}>
                     <View style={styles.headerContainer}>
                         <Text style={styles.headerText}>
@@ -63,7 +63,6 @@ class Status extends React.Component{
                 <TouchableOpacity style={styles.button} onPress={this.handlepressProfile}>
                     <Text style={styles.buttonText}>Profile Screen</Text>
                 </TouchableOpacity>
-
             </ScrollView>
 
         )
@@ -77,9 +76,7 @@ const styles = StyleSheet.create({
     
     container: {
         flex: 1,
-        backgroundColor: Colors.green,
-
-
+        backgroundColor: Colors.blue,
     },
     
     headerContainer:{

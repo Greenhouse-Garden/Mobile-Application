@@ -11,11 +11,12 @@ const StatusStack = () => {
     return(
             <Stack.Navigator
                 screenOption={{
+                    headerShown: false,
                     headerStyle:{
                         backgroundColor: Colors.green,
                         shadowColor: Colors.green,
                 },
-                headerTintColor: Colors.white,
+                headerTintColor: Colors.blue,
             }}
             >
                 <Stack.Screen
