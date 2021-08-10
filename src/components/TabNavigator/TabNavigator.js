@@ -10,30 +10,30 @@ const Tabs = createBottomTabNavigator();
 const TabNavigator = () =>{
     return(
         <Tabs.Navigator
-            tabBarOptions={{
-                showLabel: true,
-                tintColor: Colors.black,
-                activeTintColor: '#E3198F',
+            screenOptions={{
+                showLabel: false,
+                tintColor: Colors.white,
+                activeTintColor: Colors.black,
                 style:{
                     backgroundColor: Colors.zircon,
                     paddingTop:30,
                 },
             }}>
             <Tabs.Screen 
-                name='Profile'
+                name=' '
                 component={Profile}
                 options={{
                     tabBarIcon: ({size, color}) => (
                         <Image 
-                            style={{tintColor: color, width: size, height: size}}
+                            style={{tintColor: color, width: size, height: size, marginTop:15}}
                             source={require('../../assets/profile.png')}/>
                     )}}/>
             <Tabs.Screen 
-                name='StatusStack'
+                name='  '
                 component={StatusStack}
                 options={{
                     tabBarIcon: ({size, color}) => (
-                        <Image style={{tintColor: color, width:size, height: size}}
+                        <Image style={{tintColor: color, width: size, height: size, marginTop:15}}
                         source={require('../../assets/home.png')} />
                     )
                 }}
