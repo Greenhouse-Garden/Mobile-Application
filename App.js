@@ -1,12 +1,12 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import GreenHouseStack from './src/components/Stack.js';
+import AppStack from './src/components/AppStack/AppStack';
 
 
 const App = () => {
     return(
         <NavigationContainer>
-            <GreenHouseStack />
+            <AppStack />
         </NavigationContainer>
     );
 };
