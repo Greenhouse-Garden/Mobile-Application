@@ -2,11 +2,11 @@ import React from 'react'
 import {Image} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Colors from '../../res/Colors'
-import Badges from '../Badges'
 import Profile from '../Profile'
+import StatusStack from './StatusStack'
 
 const Tabs = createBottomTabNavigator();
-//here are the badges screens
+
 const TabNavigator = () =>{
     return(
         <Tabs.Navigator
@@ -29,14 +29,14 @@ const TabNavigator = () =>{
                             source={require('../../assets/profile.png')}/>
                     )}}/>
             <Tabs.Screen 
-            name='Badges'
-            component={Badges}
-            options={{
-                tabBarIcon: ({size, color}) => (
-                    <Image style={{tintColor: color, width:size, height: size}}
-                    source={require('../../assets/home.png')} />
-                )
-            }}
+                name='StatusStack'
+                component={StatusStack}
+                options={{
+                    tabBarIcon: ({size, color}) => (
+                        <Image style={{tintColor: color, width:size, height: size}}
+                        source={require('../../assets/home.png')} />
+                    )
+                }}
             />
         </Tabs.Navigator>
     );

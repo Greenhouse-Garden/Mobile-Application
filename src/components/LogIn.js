@@ -27,7 +27,7 @@ class Login extends React.Component{
 
 
     handlepress = () => {
-        this.props.navigation.navigate('Badges');
+        this.props.navigation.navigate('TabNavigator');
     };
 
 
@@ -56,9 +56,6 @@ class Login extends React.Component{
                                             <TouchableOpacity style={styles.button} onPress={this.handlepress}>
                                                 <Text style={styles.buttonText}>LogIn</Text>
                                             </TouchableOpacity>
-
-                                            <Text style={styles.Text}>Not have an account? <Text style={styles.clickableText} onPress={ ()=> Linking.openURL('https://pornhub.com') }>Register</Text></Text>
-
                                             <Pressable onPress={()=> Linking.openURL('https://www.facebook.com/greenhousecuu1')}>
                                                 <Image style={styles.facebookIcon}
                                                 source={{uri:'https://image.flaticon.com/icons/png/512/145/145802.png'}} />

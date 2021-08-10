@@ -23,7 +23,6 @@ class Landing extends React.Component{
                                 LogIn
                             </Text>
                         </TouchableOpacity>
-                        <Text style={styles.Text}>Not have an account? <Text style={styles.clickableText} onPress={ ()=> Linking.openURL('https://pornhub.com') }>Register</Text></Text>
                     </View>
                 </View>
             </View>
