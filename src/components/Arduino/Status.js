@@ -86,6 +86,9 @@ class Status extends React.Component{
         return(
             <ScrollView style={styles.container}>
                 <StatusBar backgroundColor="transparent" translucent={true} />
+                <TouchableOpacity style={styles.profileButton} onPress={this.handlepressProfile}>    
+                    <Image style={styles.profileButtonImage} source={{uri: 'https://image.flaticon.com/icons/png/512/848/848043.png'}} />
+                </TouchableOpacity>
                 <View style={styles.headerContainer}>
                     <Text style={styles.headerText}>
                         Greenhouse Garden status
@@ -116,6 +119,20 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: Colors.blue,
+    },
+
+    profileButton:{
+        marginBottom: -20,
+        marginTop: 35,
+        marginLeft: 320,
+        width: 40,
+        borderRadius: 100,
+        backgroundColor: Colors.white
+    },
+
+    profileButtonImage:{
+        height: 40,
+        width: 40,
     },
     
     headerContainer:{
