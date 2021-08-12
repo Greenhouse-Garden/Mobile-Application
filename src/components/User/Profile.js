@@ -60,7 +60,11 @@ class Profile extends React.Component{
         console.log(response)
         this.setState({user: response})
     };
+
     
+    handlepresBack = () => {
+        this.props.navigation.navigate('Status');
+    };
 
 
     handlepressAddArduino = () => {
@@ -77,19 +81,29 @@ class Profile extends React.Component{
         return(
             <View style={styles.Container}>
                  <View style={styles.badge}>
-                    
+                    <Text style={styles.Title}>Profile Picture</Text>
+                    <Text style={styles.infotext}>A picture helps people recognize you</Text>
                     <Image
                         style={styles.profileImage}
-                        source={{uri: `${user.profile.profile_picture}`}}/>
+                        source={require('../../assets/dua.jpg')} />
+                        {/*source={{uri: `${user.profile.profile_picture}`}}/>*/}
 
-                    <TouchableOpacity style={styles.clickabeImage} onPress={this.handleChooseProfileImage}>
-                        <Image style={styles.icon} source={{uri: 'https://image.flaticon.com/icons/png/512/848/848043.png'}}/>
-                    </TouchableOpacity>
                     
                     <View style={styles.userInfo}>
+                        <Text style={styles.hi}>Hi! </Text>
                         <Text style={styles.name}>{user.first_name}</Text>
                         <Text style={styles.lastname}>{user.last_name}</Text>
                     </View>
+                    
+                    <TouchableOpacity style={styles.clickabeImage} onPress={this.handleChooseProfileImage}>
+                        <Text style={styles.clickableText}>Change</Text>
+                        <Image style={styles.icon} source={require('../../assets/pencil.png')}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.clickabeImage2} onPress={this.handlepresBack}>
+                        <Text style={styles.clickableText2}>Back</Text>
+                        <Image style={styles.icon2} source={require('../../assets/arrow.png')}/>
+                    </TouchableOpacity>
+
                     
                     <TouchableOpacity style={styles.addArduino} onPress={this.handlepressAddArduino}>
                         <Text style={styles.addText}>Add arduino</Text>
@@ -125,15 +139,28 @@ const styles = StyleSheet.create({
         elevation: 24,
     },
 
+    Title:{
+        alignSelf: 'center',
+        marginTop: 30,
+        fontSize: 22
+    },
+
+    infotext:{
+        alignSelf: 'center',
+        fontSize: 15,
+        marginTop: 20,
+        marginBottom: -20
+    },
+
     profileImage: {
         width: 200,
         height: 200,
         resizeMode: 'cover',
-        borderRadius: 75,
+        borderRadius: 100,
         borderWidth: 5,
         borderColor: Colors.white,
         position: 'absolute',
-        top: 25,
+        top: 125,
         left: '20%',
         shadowColor: "#000",
         shadowOffset: {
@@ -146,10 +173,15 @@ const styles = StyleSheet.create({
 
     userInfo: {
     flexDirection: 'row',
-    top: 250,
+    top: 260,
     justifyContent: 'center',
     },
 
+    hi:{
+        fontSize: 24,
+        marginTop: 4
+    },
+    
     name: {
     fontSize: 28,
     fontWeight: 'bold',
@@ -180,7 +212,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         width: 150,
         alignSelf: 'center',
-        top: 500,
+        top: 450,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -190,19 +222,59 @@ const styles = StyleSheet.create({
         shadowRadius: 7.49,
         elevation: 12,
     },
+
     clickabeImage: {
-        width: 25,
-        height: 30,
+        flexDirection: 'row',
+        width: 120,
+        height: 45,
         position: 'absolute',
-        left: 245,
-        top: 185
+        left: 190,
+        top: 430,
+        backgroundColor: Colors.green,
+        borderRadius:6
     
       },
 
+    clickableText:{
+        width: 48,
+        top: 12,
+        left: 50,
+        fontSize:14
+    },
+
     icon:{
-    width: 30,
-    height: 30,
+    width: 28,
+    height: 28,
+    left: -30,
+    top: 8
+    },
+
+    clickabeImage2: {
+        flexDirection: 'row',
+        width: 120,
+        height: 45,
+        position: 'absolute',
+        left: 50,
+        top: 430,
+        borderWidth: 2,
+        borderColor: Colors.green,
+        borderRadius:6
     
+      },
+
+    clickableText2:{
+        width: 48,
+        top: 12,
+        left: 50,
+        fontSize:14,
+        color: Colors.green
+    },
+
+    icon2:{
+    width: 28,
+    height: 28,
+    left: -30,
+    top: 8
     },
 });
 

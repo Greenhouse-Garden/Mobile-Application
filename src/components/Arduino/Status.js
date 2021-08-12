@@ -26,7 +26,6 @@ const headerBackground = {
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import UserSession from '../../libs/sessions.js';
 
-const Tab = createBottomTabNavigator();
 
 class Status extends React.Component{
     state={
@@ -106,19 +105,19 @@ class Status extends React.Component{
                         <Image style={styles.InfoIcon} source={{uri:'https://image.flaticon.com/icons/png/512/545/545674.png'}}/>
                     </TouchableOpacity>
                 </View>
-
-                    <View style={styles.video}>
-                        <Video source={require('../../assets/video.mp4')} paused  // Can be a URL or a localfile.
-                        ref={(ref) => {
-                            this.player = ref
-                        }}                                      // Store reference
-                        style={styles.fullScreen}
-                        onBuffer={this.onBuffer}
-                        controls={true}                         // Callback when remote video is buffering
-                        onEnd={this.onEnd}                      // Callback when playback finishes
-                        onError={this.videoError}               // Callback when video cannot be loaded
-                        style={styles.backgroundVideo} />
-                    </View>
+                    <Text style={styles.videoText}>Video tutorial Arduino registration</Text>
+                        <View style={styles.video}>
+                            <Video source={require('../../assets/video.mp4')} paused  // Can be a URL or a localfile.
+                            ref={(ref) => {
+                                this.player = ref
+                            }}                                      // Store reference
+                            style={styles.fullScreen}
+                            onBuffer={this.onBuffer}
+                            controls={true}                         // Callback when remote video is buffering
+                            onEnd={this.onEnd}                      // Callback when playback finishes
+                            onError={this.videoError}               // Callback when video cannot be loaded
+                            style={styles.backgroundVideo} />
+                        </View>
             </ScrollView>
 
         )
@@ -200,14 +199,29 @@ const styles = StyleSheet.create({
         width: 25,
         height: 25
     },
+
+    videoText:{
+        marginTop: 40,
+        fontSize: 20,
+        alignSelf: 'center',
+        width: 300,
+        color:Colors.white
+    },
+
     video:{
+        resizeMode: 'center',
+        alignSelf: 'center',
         marginTop: 50,
-        marginLeft: 20
+        borderWidth: 5,
+        width: 450,
+        height: 265,
+        borderRadius: 45,
+        borderColor: Colors.white
     },
     backgroundVideo: {
-        height: 270,
-        width: 350,
-        borderRadius: 45,
+        height: '100%',
+        width: '100%',
+        borderRadius: 45
     },
 });
 
