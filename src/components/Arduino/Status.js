@@ -16,6 +16,7 @@ import {
 
 import Iot from '../../libs/iot.js';
 import Colors from '../../res/Colors.js';
+import Video from 'react-native-video'
 
 const headerBackground = {
     uri: 'https://c1.wallpaperflare.com/preview/121/822/384/plant-greenhouse-fern-green.jpg'
@@ -104,7 +105,20 @@ class Status extends React.Component{
                     <TouchableOpacity style={styles.InfoIconButton} onPress={this.handlepressInfo}>
                         <Image style={styles.InfoIcon} source={{uri:'https://image.flaticon.com/icons/png/512/545/545674.png'}}/>
                     </TouchableOpacity>
-                </View>                
+                </View>
+
+                    <View style={styles.video}>
+                        <Video source={require('../../assets/video.mp4')} paused  // Can be a URL or a localfile.
+                        ref={(ref) => {
+                            this.player = ref
+                        }}                                      // Store reference
+                        style={styles.fullScreen}
+                        onBuffer={this.onBuffer}
+                        controls={true}                         // Callback when remote video is buffering
+                        onEnd={this.onEnd}                      // Callback when playback finishes
+                        onError={this.videoError}               // Callback when video cannot be loaded
+                        style={styles.backgroundVideo} />
+                    </View>
             </ScrollView>
 
         )
@@ -185,7 +199,16 @@ const styles = StyleSheet.create({
     InfoIcon:{
         width: 25,
         height: 25
-    }
+    },
+    video:{
+        marginTop: 50,
+        marginLeft: 20
+    },
+    backgroundVideo: {
+        height: 270,
+        width: 350,
+        borderRadius: 45,
+    },
 });
 
 export default Status;
