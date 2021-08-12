@@ -2,7 +2,7 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import TabNavigator from '../TabNavigator/TabNavigator'
 import Landing from '../Landing'
-import Login from '../Login'
+import Login from '../User/Login'
 import Colors from '../../res/Colors'
 
 const Stack = createStackNavigator();
