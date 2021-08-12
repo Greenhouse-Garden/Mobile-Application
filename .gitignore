@@ -313,6 +313,8 @@ Temporary Items
 
 #folders
 /.vscode/
+/assets
+*/assets
 /assets/
 
 # End of https://www.toptal.com/developers/gitignore/api/reactnative
