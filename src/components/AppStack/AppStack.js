@@ -8,6 +8,7 @@ import Landing from '../Landing'
 import Login from '../User/Login'
 import Colors from '../../res/Colors'
 import AddArduino from '../Arduino/AddArduino'
+import TroubleShooting from '../Arduino/TroubleShooting'
 
 const Stack = createStackNavigator();
 
@@ -57,6 +58,12 @@ const AppStack = () => {
             <Stack.Screen
                 name="AddArduino"
                 component={AddArduino}
+                options={{headerShown: false}} 
+            />
+
+            <Stack.Screen
+                name="TroubleShooting"
+                component={TroubleShooting}
                 options={{headerShown: false}} 
             />
 
