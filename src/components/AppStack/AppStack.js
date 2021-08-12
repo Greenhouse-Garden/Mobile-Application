@@ -7,6 +7,7 @@ import Profile from '../User/Profile'
 import Landing from '../Landing'
 import Login from '../User/Login'
 import Colors from '../../res/Colors'
+import AddArduino from '../Arduino/AddArduino'
 
 const Stack = createStackNavigator();
 
@@ -52,6 +53,13 @@ const AppStack = () => {
                 component={Profile}
                 options={{headerShown: false}} 
             />
+
+            <Stack.Screen
+                name="AddArduino"
+                component={AddArduino}
+                options={{headerShown: false}} 
+            />
+
                 
         </Stack.Navigator>
     )
