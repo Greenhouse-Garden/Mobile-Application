@@ -56,7 +56,7 @@ class Login extends React.Component{
         this.setState({ loading: false, error: err });
     }
     if (this.state.user) {
-        this.props.navigation.replace('TabNavigator');
+        this.props.navigation.replace('Status');
     }
 };
 

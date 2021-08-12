@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import {Image} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Colors from '../../res/Colors'
@@ -49,4 +49,4 @@ const TabNavigator = () =>{
     );
 };
 
-export default TabNavigator;
+export default TabNavigator;*/

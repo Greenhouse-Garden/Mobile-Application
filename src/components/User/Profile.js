@@ -83,7 +83,7 @@ class Profile extends React.Component{
                         source={{uri: `${user.profile.profile_picture}`}}/>
 
                     <TouchableOpacity style={styles.clickabeImage} onPress={this.handleChooseProfileImage}>
-                        <Image style={styles.icon} source={require('../../assets/picture.png')}/>
+                        <Image style={styles.icon} source={{uri: 'https://image.flaticon.com/icons/png/512/848/848043.png'}}/>
                     </TouchableOpacity>
                     
                     <View style={styles.userInfo}>

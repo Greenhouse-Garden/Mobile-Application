@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import Status from './Status'
 import Colors from '../../res/Colors'
@@ -35,4 +35,4 @@ const StatusStack = () => {
     );
 }
 
-export default StatusStack;
+export default StatusStack;*/
