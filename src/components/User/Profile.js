@@ -90,7 +90,7 @@ class Profile extends React.Component{
 
                     
                     <View style={styles.userInfo}>
-                        <Text style={styles.hi}>Hi! </Text>
+                        <Text style={styles.hi}>Hi </Text>
                         <Text style={styles.name}>{user.first_name}</Text>
                         <Text style={styles.lastname}>{user.last_name}</Text>
                     </View>
