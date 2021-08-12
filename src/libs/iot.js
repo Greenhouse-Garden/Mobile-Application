@@ -1,31 +1,38 @@
 import URLS from './urls'
 
-class iot {
-  static instance = new iot()
+class Iot {
+  static instance = new Iot()
 
-  get = async IdArduino => {
+  get = async (by, IdArduino) => {
       try {
-          let request = await fetch(`${URLS.arduino_url}/_id:${IdArduino}/`)
+          let request = await fetch(`${URLS.arduino_url}/${by}:${IdArduino}/`)
           let response = await request.json()
           return response
       } catch (error) {
-          console.log('HTTP get method error', err)
+          console.log('HTTP get method error', error)
           throw Error(error)
       }
   }
-  post = async sensor => {
+
+  post = async body => {
       try {
-          let request = await fetch(`${URLS.arduino_url}/new/`,{
+          let request = await fetch(`${URLS.arduino_url}/createGreenhouse/`,{
               method:'POST',
-              body:JSON.stringify(sensor),
-          })
-          let response = await request.json()
-          return response
-      } catch (err) {
-          console.log('HTTP post method error', err)
-          throw Error(err)
+              headers:{
+                  'Content-Type':'application/json',
+                  Accept:'application/json',
+              },
+              body:JSON.stringify(body)
+            })
+            let response = await request.json()    
+            return response
+
+      } catch (error) {
+          console.log('HTTP post method error', error)
+          throw Error(error)
       }
   }
 }
 
-export default iot;
+export default Iot;
+
