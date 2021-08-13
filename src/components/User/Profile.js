@@ -81,6 +81,7 @@ class Profile extends React.Component{
         return(
             <View style={styles.Container}>
                  <View style={styles.badge}>
+                    
                     <Text style={styles.Title}>Profile Picture</Text>
                     <Text style={styles.infotext}>A picture helps people recognize you</Text>
                     <Image
@@ -239,7 +240,7 @@ const styles = StyleSheet.create({
         width: 48,
         top: 12,
         left: 50,
-        fontSize:14
+        fontSize:14,
     },
 
     icon:{

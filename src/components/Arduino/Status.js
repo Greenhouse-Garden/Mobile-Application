@@ -211,17 +211,17 @@ const styles = StyleSheet.create({
     video:{
         resizeMode: 'center',
         alignSelf: 'center',
+        alignItems: 'center',
         marginTop: 50,
         borderWidth: 5,
         width: 450,
         height: 265,
-        borderRadius: 45,
         borderColor: Colors.white
     },
     backgroundVideo: {
         height: '100%',
         width: '100%',
-        borderRadius: 45
+        alignSelf: 'center'
     },
 });
 
