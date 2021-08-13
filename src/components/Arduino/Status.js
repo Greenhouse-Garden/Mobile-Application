@@ -14,7 +14,6 @@ import {
     Linking
 } from 'react-native';
 
-import videoGreenhouse from '../../assets/video.mp4'
 import Iot from '../../libs/iot.js';
 import Colors from '../../res/Colors.js';
 import Video from 'react-native-video'
@@ -115,17 +114,9 @@ class Status extends React.Component{
                 </View>
 
                 <Text style={styles.videoText}>Video tutorial Arduino registration</Text>
-                {/* <View style={styles.video}>
-                    <Video source={videoGreenhouse}   // Can be a URL or a localfile.
-                        ref={(ref) => {
-                            this.player = ref
-                            }}                                      // Store reference
-                        onBuffer={this.onBuffer}
-                        controls={true}                // Callback when remote video is buffering
-                        onEnd={this.onEnd}                      // Callback when playback finishes
-                        onError={this.videoError}               // Callback when video cannot be loaded
-                        style={styles.backgroundVideo}/>
-                </View> */}
+                <View stylele={styles.gifView}>
+                    <Image style={styles.gif} source={require('../../assets/gif.gif')} />
+                </View>
             </ScrollView>
 
         )
@@ -249,28 +240,22 @@ const styles = StyleSheet.create({
     },
 
     videoText:{
-        marginTop: 40,
+        marginTop: 20,
         fontSize: 20,
         alignSelf: 'center',
         width: 300,
         color:Colors.white
     },
 
-    video:{
-        resizeMode: 'center',
+    gif:{
+        marginTop: 30,
         alignSelf: 'center',
-        alignItems: 'center',
-        marginTop: 50,
+        height: 200,
+        width: 360,
         borderWidth: 5,
-        width: 450,
-        height: 265,
         borderColor: Colors.white
     },
-    backgroundVideo: {
-        height: '100%',
-        width: '100%',
-        alignSelf: 'center'
-    },
+
 });
 
 export default Status;
