@@ -14,6 +14,7 @@ import {
     Linking
 } from 'react-native';
 
+import videoGreenhouse from '../../assets/video.mp4'
 import Iot from '../../libs/iot.js';
 import Colors from '../../res/Colors.js';
 import Video from 'react-native-video'
@@ -89,35 +90,42 @@ class Status extends React.Component{
                 <TouchableOpacity style={styles.profileButton} onPress={this.handlepressProfile}>    
                     <Image style={styles.profileButtonImage} source={{uri: 'https://image.flaticon.com/icons/png/512/848/848043.png'}} />
                 </TouchableOpacity>
+
                 <View style={styles.headerContainer}>
-                    <Text style={styles.headerText}>
-                        Greenhouse Garden status
-                    </Text>
+                    <Text style={styles.headerText}>Temperature</Text>
                     <View style={styles.statusContainer}>
-                        <Text style={styles.statusText}>
-                            Temperature: {measurements.temperature} C
-                        </Text>
-                        <Text style={styles.statusText}>
-                            Humidity: {measurements.humidity}%
-                        </Text>
+                        <Text style={styles.timeText}>{measurements.lastUpdate}</Text>
+                        <Text style={styles.statusText}>{measurements.temperature}°C</Text>
                     </View>
                     <TouchableOpacity style={styles.InfoIconButton} onPress={this.handlepressInfo}>
                         <Image style={styles.InfoIcon} source={{uri:'https://image.flaticon.com/icons/png/512/545/545674.png'}}/>
                     </TouchableOpacity>
                 </View>
-                    <Text style={styles.videoText}>Video tutorial Arduino registration</Text>
-                        <View style={styles.video}>
-                            <Video source={require('../../assets/video.mp4')} paused  // Can be a URL or a localfile.
-                            ref={(ref) => {
-                                this.player = ref
+                
+                <View style={styles.headerContainerHumidity}>
+                    <Text style={styles.headerTextHumidity}>Humidity</Text>
+                    <View style={styles.statusContainerHumidity}>
+                        <Text style={styles.timeText}>{measurements.lastUpdate}</Text>
+                        <Text style={styles.statusTextHumidity}>{measurements.humidity}%</Text>
+                    </View>
+                    <TouchableOpacity style={styles.InfoIconButton} onPress={this.handlepressInfo}>
+                        <Image style={styles.InfoIcon} source={{uri:'https://image.flaticon.com/icons/png/512/545/545674.png'}}/>
+                    </TouchableOpacity>
+
+                </View>
+
+                <Text style={styles.videoText}>Video tutorial Arduino registration</Text>
+                {/* <View style={styles.video}>
+                    <Video source={videoGreenhouse}   // Can be a URL or a localfile.
+                        ref={(ref) => {
+                            this.player = ref
                             }}                                      // Store reference
-                            style={styles.fullScreen}
-                            onBuffer={this.onBuffer}
-                            controls={true}                         // Callback when remote video is buffering
-                            onEnd={this.onEnd}                      // Callback when playback finishes
-                            onError={this.videoError}               // Callback when video cannot be loaded
-                            style={styles.backgroundVideo} />
-                        </View>
+                        onBuffer={this.onBuffer}
+                        controls={true}                // Callback when remote video is buffering
+                        onEnd={this.onEnd}                      // Callback when playback finishes
+                        onError={this.videoError}               // Callback when video cannot be loaded
+                        style={styles.backgroundVideo}/>
+                </View> */}
             </ScrollView>
 
         )
@@ -170,25 +178,65 @@ const styles = StyleSheet.create({
     },
 
     headerText:{
-        alignSelf: 'center',
         color: Colors.black,
         fontSize: 22,
         fontFamily: 'serif',
         
     },
 
+    
     statusContainer:{
         marginTop: 10,
         flexDirection: 'row',
         justifyContent: 'space-evenly'
-
+        
     },
     
     statusText:{
-        fontSize: 16,
+        fontSize: 20,
         fontFamily: 'Roboto',
-
+        
     },
+    
+    timeText:{
+        marginLeft: -60
+    },
+    headerContainerHumidity:{
+        alignSelf: 'center',
+        flex:1,
+        marginTop: 20,
+        width:'90%',
+        height: '45%',
+        backgroundColor: Colors.white,
+        borderRadius: 20,
+        padding: 15,
+        shadowColor: "#080000",
+        shadowOffset: {
+            width: 0,
+            height: 12,
+        },
+        shadowOpacity: 0.58,
+        shadowRadius: 16.00,
+
+        elevation: 24,
+        
+    },
+    headerTextHumidity:{
+        color: Colors.black,
+        fontSize: 22,
+        fontFamily: 'serif',
+    },
+    statusContainerHumidity:{
+        marginTop: 12,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly'
+    },
+    statusTextHumidity:{
+        fontSize: 20,
+        marginLeft: 35,
+        fontFamily: 'Roboto',
+    },
+
     InfoIconButton:{
         width: 25,
         height: 25,
