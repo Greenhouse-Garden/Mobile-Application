@@ -85,8 +85,7 @@ class Profile extends React.Component{
                     <Text style={styles.infotext}>A picture helps people recognize you</Text>
                     <Image
                         style={styles.profileImage}
-                        source={require('../../assets/dua.jpg')} />
-                        {/*source={{uri: `${user.profile.profile_picture}`}}/>*/}
+                        source={{uri: `${user.profile.profile_picture}`}}/>
 
                     
                     <View style={styles.userInfo}>
